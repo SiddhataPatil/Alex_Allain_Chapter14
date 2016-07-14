@@ -4,7 +4,7 @@
  Author      : Siddhata Patil
  Copyright   : Copyright ©  Siddhata Patil. Sourcecode rights reserved.
  Copyright   : Copyright ©  Alex_Allain_Jumping_into_Cpp_Book. Question rights reserved.
- Question    : Assigning array to pointer, printing 1-9, getting the size and address of the first index in an array
+ Question    : Assigning array to pointer, printing 1-10, getting the size and address of the first index in an array
  ==============================================================================================================================
  */
  
@@ -14,7 +14,6 @@ using namespace std;
 int main()
 
 {
-
 
 int A[10];
 cout<<"Array size"<<sizeof(A)<<endl;
