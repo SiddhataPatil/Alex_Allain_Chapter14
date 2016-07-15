@@ -23,7 +23,7 @@ void print_ascending(string* p, int* x,int size) // has to be corrected
 	int j,k,s;
 	string temp=" ";
 	int temp_int;
-	for(s=0; s<size/2; s++)
+	for(s=0; s<size; s++)
 	{
 	for ( j=0; j<size-1; j++)
 	{
