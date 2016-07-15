@@ -14,34 +14,46 @@
  
 #include <iostream>
 #include <string>
-#include <cstdlib>
-#include <ctime>
 using namespace std;
 
-void print_ascending(string* p, int* x,int size) // has to be corrected
+void print1 (int* t, string* s,int size)
 {
-	int j,k,s;
-	string temp=" ";
-	int temp_int;
-	for(s=0; s<size; s++)
+	for(int i=0; i<size; i++)
 	{
-	for ( j=0; j<size-1; j++)
+		cout<<s[i]<<"---->"<<t[i]<<endl;
+	}
+
+}
+
+void swap2(string &n1, string &n2)
+{
+	string temp;
+	temp=n1;
+	n1=n2;
+	n2=temp;
+}
+void swap1(int &n1, int &n2)
+{
+	int temp;
+	temp=n1;
+	n1=n2;
+	n2=temp;
+}
+
+
+void bubble_sort(string* s,int* p, int size)
+{
+	for(int j=0; j<size; j++)
 	{
-		if(x[j]<x[j+1])
+		for(int i=0; i<size-1; i++)
 		{
-		temp = p[j];
-		temp_int = x[j];
-		p[j]=p[j+1];
-		x[j]=x[j+1];
-		p[j+1] = temp;
-		x[j+1] = temp_int;
+			if (p[i]<p[i+1])
+				swap1(p[i],p[i+1]);
+				swap2(s[i],s[i+1]);
 		}
 	}
-	}
-	for ( k=0; k<size; k++)
-	{
-		cout<<p[k]<<" --> "<< x[k]<<endl;
-	}
+	
+	print1(p,s,size);
 }
 
 void max_caller(string* p, int* x, int size)
@@ -96,7 +108,7 @@ int count;
 	{
 		next_element=i;
 	max_caller(p,x, size);
-	print_ascending(p,x,size);
+	bubble_sort(p,x,size);
 	cout<<"How many more friends you want to add"<<endl;
 	cin>> count;
 	size= size+count;
