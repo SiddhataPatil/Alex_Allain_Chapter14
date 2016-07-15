@@ -20,7 +20,6 @@ using namespace std;
 
 void print_ascending(string* p, int* x,int size) // has to be corrected
 {
-	//int* a = new int [size];
 	int j,k,s;
 	string temp=" ";
 	for(s=0; s<size/2; s++)
@@ -55,19 +54,19 @@ struct callers
 	string name;
 	int no;
 };
-callers blah;
+
 int main()
 
-{	
-	string* p= new string[20];
-	int i,t;
-	const int row_size=20;
+{		
+	int i,next_element;
 	int size;
 	int loop_condition=0;
-	int* x = new int [row_size];
+	callers blah;
 	
 cout<< "Enter no of friends you want to keep in contact"<< endl;
-	cin>>size;
+cin>>size;
+string* p= new string[size*4];
+int* x = new int [size*4];
 int count;
 		for ( i=0; i<size; i++)
 	{
@@ -79,13 +78,13 @@ int count;
 	}
 		while(loop_condition<10)
 	{
-		t=i;
+		next_element=i;
 	Info(p,x, size);
 	print_ascending(p,x,size);
 	cout<<"How many more friends you want to add"<<endl;
 	cin>> count;
 	size= size+count;
-for ( i=t; i<size; i++)
+for ( i=next_element; i<size; i++)
 	{
 		cout<<"Enter name and no of times called: "<<i+1<<" ] "<<endl;
 		cin>>blah.name;
