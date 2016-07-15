@@ -22,7 +22,7 @@ void print_ascending(string* p, int* x,int size) // has to be corrected
 {
 	int j,k,s;
 	string temp=" ";
-	for(s=0; s<size/2; s++)
+	for(s=0; s<size; s++)
 	{
 	for ( j=0; j<size-1; j++)
 	{
@@ -39,7 +39,8 @@ void print_ascending(string* p, int* x,int size) // has to be corrected
 		cout<< p[k]<<endl;
 	}
 }
-void Info(string* p, int* x, int size)
+
+void max_caller(string* p, int* x, int size)
 {int max=0;
 for ( int k=0; k<size; k++)
 	{
@@ -47,6 +48,7 @@ for ( int k=0; k<size; k++)
 			max=k;
 	}
 cout<< "Most called friend is "<<p[max]<< endl;
+cout<<p[max]<<" called "<< x[max]<<" times"<< endl;
 
 }
 struct callers
@@ -79,7 +81,7 @@ int count;
 		while(loop_condition<10)
 	{
 		next_element=i;
-	Info(p,x, size);
+	max_caller(p,x, size);
 	print_ascending(p,x,size);
 	cout<<"How many more friends you want to add"<<endl;
 	cin>> count;
