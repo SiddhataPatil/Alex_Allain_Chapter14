@@ -22,21 +22,25 @@ void print_ascending(string* p, int* x,int size) // has to be corrected
 {
 	int j,k,s;
 	string temp=" ";
-	for(s=0; s<size; s++)
+	int temp_int;
+	for(s=0; s<size/2; s++)
 	{
 	for ( j=0; j<size-1; j++)
 	{
 		if(x[j]<x[j+1])
 		{
 		temp = p[j];
+		temp_int = x[j];
 		p[j]=p[j+1];
+		x[j]=x[j+1];
 		p[j+1] = temp;
+		x[j+1] = temp_int;
 		}
 	}
 	}
 	for ( k=0; k<size; k++)
 	{
-		cout<< p[k]<<endl;
+		cout<<p[k]<<" --> "<< x[k]<<endl;
 	}
 }
 
@@ -72,11 +76,21 @@ int* x = new int [size*4];
 int count;
 		for ( i=0; i<size; i++)
 	{
-		cout<<"Enter name and no of times called: "<<i+1<<" ] "<<endl;
+		cout<<"Enter name: "<<i+1<<" ] "<<endl;
 		cin>>blah.name;
 		p[i]= blah.name;
+		cout<<"Enter the no of times"<<p[i]<<" called: "<<endl;
 		cin>>blah.no;
+		if(blah.no > 0)
 		x[i] = blah.no;
+		else 
+		{
+			cout<<"Please enter a positive number: "<<endl;
+			cin>>blah.no;
+			if(blah.no > 0)
+			x[i] = blah.no;
+			else break;
+		}
 	}
 		while(loop_condition<10)
 	{
@@ -88,11 +102,21 @@ int count;
 	size= size+count;
 for ( i=next_element; i<size; i++)
 	{
-		cout<<"Enter name and no of times called: "<<i+1<<" ] "<<endl;
+		cout<<"Enter name: "<<i+1<<" ] "<<endl;
 		cin>>blah.name;
 		p[i]= blah.name;
+		cout<<"Enter the no of times "<<p[i]<<" called: "<<endl;
 		cin>>blah.no;
+		if(blah.no > 0)
 		x[i] = blah.no;
+		else 
+		{
+			cout<<"Please enter a positive number: "<<endl;
+			cin>>blah.no;
+			if(blah.no > 0)
+			x[i] = blah.no;
+			else break;
+		}
 	} continue;
 	loop_condition++;
 	}
