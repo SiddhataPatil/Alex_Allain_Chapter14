@@ -25,27 +25,31 @@ void print_array(int **p, int columns, int rows)
 		cout<<endl;
 	}
 }
+
 int main()
 {
-	clock_t begin = clock();
-
+clock_t begin = clock();
+int row, column;
 int** pointer_to_rows;
+cout<<"No of rows"<<endl;
+cin>>row;
+cout<<"No of columns"<<endl;
+cin>>column;
+pointer_to_rows = new int*[row];
 
-pointer_to_rows = new int*[3];
-
-for (int i=0; i<3; i++)
+for (int i=0; i<row; i++)
 {
-	pointer_to_rows[i] = new int[2]; // 3 rows and 2 columns
+	pointer_to_rows[i] = new int[column]; // 3 rows and 2 columns
 }
-for(int i=0; i<3;i++)
+for(int i=0; i<row;i++)
 {
-	for (int j=0; j<2; j++)
+	for (int j=0; j<column; j++)
 	{
 		pointer_to_rows[i][j] = i*j;
 	}
 }
 
-print_array(pointer_to_rows,2,3);
+print_array(pointer_to_rows,column,row);
 
 cout<<endl;
 cout<<pointer_to_rows[1][1];
