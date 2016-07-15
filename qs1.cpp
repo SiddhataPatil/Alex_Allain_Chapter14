@@ -14,6 +14,17 @@
 #include <iostream>
 using namespace std;
 
+void print_array(int **p, int columns, int rows)
+{
+	for(int i=0; i<rows;i++)
+	{
+		for (int j=0; j<columns; j++)
+		{
+		cout<<p[i][j]<< "  ";
+		}
+		cout<<endl;
+	}
+}
 int main()
 {
 	clock_t begin = clock();
@@ -34,14 +45,7 @@ for(int i=0; i<3;i++)
 	}
 }
 
-for(int i=0; i<3;i++)
-{
-	for (int j=0; j<2; j++)
-	{
-		cout<<pointer_to_rows[i][j]<< "  ";
-	}
-	cout<<endl;
-}
+print_array(pointer_to_rows,2,3);
 
 cout<<endl;
 cout<<pointer_to_rows[1][1];
