@@ -22,7 +22,7 @@ for(int i=0; i<B.size(); i++)
   if(B[i]==B[i+1])
   {
     duplicate = B[i];
-    return duplicate;
+    cout << B[i]<<endl;
   }
 }
 return duplicate;
@@ -30,9 +30,12 @@ return duplicate;
 
 int main() {
 int array1[8] = {1,2,3,4,2,7,3,7};
+cout<<"Original array = {1,2,3,4,2,7,3,7}"<<endl;
+cout<<"Repeated nos are: "<<endl;
 int duplicate=0;
 vector<int> A(array1, array1+sizeof(array1)/sizeof(array1[0]));
 duplicate= repeatedNumber(A) ;
-cout<<duplicate<<endl;
+//cout<<duplicate<<endl;
 	return 0;
 }
+
